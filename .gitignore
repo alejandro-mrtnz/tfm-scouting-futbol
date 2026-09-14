@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Entornos y configuración local
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# IDE y sistema operativo
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Compilación y empaquetado
+build/
+dist/
+*.exe
+/release/
+
+# Temporales de LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Datos originales y resultados intermedios de terceros
+/DATOS TRANSFERMARKET.xlsx
+/datos_modelizacion.xlsx
+/Estadisticas Jugadores 2025-2026.xlsx
+/EXPLICACION VARIABLES.xlsx
+/Jugadores usados en el entrenamiento.xlsx
+/revision_pipeline.xlsx
+/transfermarkt_7_ligas_profiles_incremental_2025_26.csv
+/whoscored_todas_ligas_jugadores_2025_26.xlsx
+
+# Exportaciones auxiliares de los notebooks
+/equipos_transfermarkt.xlsx
+/mismo_nombre_distinto_fisico.xlsx
+/union_final.xlsx
+/union_transfermarkt_posiciones_ordenado.xlsx
+/whoscored_duplicados_analisis.xlsx
+
+# Artefactos generados por app/train.py
+/artifacts/*
+!/artifacts/README.md

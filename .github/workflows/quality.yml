@@ -1,0 +1,35 @@
+name: Quality checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Compile Python sources
+        run: python -m compileall -q app
+
+      - name: Run smoke tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Validate notebooks as JSON
+        run: |
+          python -m json.tool DEPURADOR.ipynb > /dev/null
+          python -m json.tool MODELIZACION.ipynb > /dev/null
